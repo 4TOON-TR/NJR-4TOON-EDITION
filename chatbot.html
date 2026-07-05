@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>چت‌بات نیمار | NJR</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/chatbot.css" />
+</head>
+<body>
+    
+    <div id="particles-js"></div>
+
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">✦</span>
+                    NJR
+                    <span class="logo-sub">10</span>
+                </a>
+            </div>
+            
+            <nav class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="about.html">تاریخچه</a></li>
+                    <li><a href="achievements.html">افتخارات</a></li>
+                    <li><a href="challenge.html">چالش‌ها</a></li>
+                    <li><a href="chatbot.html" class="active">چت‌بات</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions" id="navActions">
+                <div class="user-status" id="userStatus">
+                    <a href="login.html" class="btn-gold" id="loginBtn">
+                        <i class="fas fa-user-astronaut"></i>
+                        ورود / ثبت‌نام
+                    </a>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="chatbot-page">
+        <div class="chatbot-glow-1"></div>
+        <div class="chatbot-glow-2"></div>
+        <div class="chatbot-glow-3"></div>
+        
+        <div class="container">
+            <div class="chatbot-header">
+                <span class="chatbot-badge">✦ هوش مصنوعی</span>
+                <h1 class="chatbot-title">
+                    <span class="highlight">چت‌بات</span> نیمار
+                </h1>
+                <p class="chatbot-sub">هر چیزی درباره نیمار بپرس</p>
+            </div>
+
+            <div class="chatbot-container">
+                <!-- سوالات پیشنهادی -->
+                <div class="suggested-questions" id="suggestedQuestions">
+                    <span class="suggest-title">سوالات پیشنهادی ✦</span>
+                    <div class="suggest-grid">
+                        <button class="suggest-btn" data-question="نیمار چند سال دارد؟">
+                            <i class="fas fa-calendar"></i> سن نیمار
+                        </button>
+                        <button class="suggest-btn" data-question="نیمار چند گل در بارسلونا زده؟">
+                            <i class="fas fa-futbol"></i> گل‌های بارسلونا
+                        </button>
+                        <button class="suggest-btn" data-question="نیمار در کدام باشگاه ها بازی کرده؟">
+                            <i class="fas fa-trophy"></i> باشگاه‌های نیمار
+                        </button>
+                        <button class="suggest-btn" data-question="آخرین گل نیمار را بگو؟">
+                            <i class="fas fa-star"></i> آخرین گل
+                        </button>
+                        <button class="suggest-btn" data-question="نیمار چند جام دارد؟">
+                            <i class="fas fa-crown"></i> افتخارات نیمار
+                        </button>
+                        <button class="suggest-btn" data-question="نیمار چه رکوردهایی دارد؟">
+                            <i class="fas fa-chart-line"></i> رکوردهای نیمار
+                        </button>
+                    </div>
+                </div>
+
+                <!-- باکس چت -->
+                <div class="chat-box" id="chatBox">
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- پیام خوش‌آمدگویی -->
+                        <div class="message bot-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-text">
+                                    ✦ سلام! من چت‌بات نیمار هستم. هر سوالی درباره نیمار داری، بپرس!
+                                </div>
+                                <span class="message-time">همین الان</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- وضعیت تایپ -->
+                    <div class="typing-indicator" id="typingIndicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <!-- ورودی -->
+                    <div class="chat-input-wrapper">
+                        <div class="chat-input-box">
+                            <input type="text" id="chatInput" placeholder="سوال خود را بپرس..." />
+                            <button class="send-btn" id="sendBtn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="chat-char-counter">
+                            <span id="charCount">۰</span>
+                            <span>/ ۳۰۰</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- آمار چت -->
+                <div class="chat-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalQuestions">۰</span>
+                        <span class="stat-label">سوال پرسیده شده</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="answeredQuestions">۰</span>
+                        <span class="stat-label">پاسخ داده شده</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="chatRating">۱۰۰%</span>
+                        <span class="stat-label">رضایت کاربران</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>NJR <span>✦</span></h3>
+                    <p>همه‌چیز برای اسطوره‌ی فوتبال برزیل</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">خانه</a>
+                    <a href="about.html">تاریخچه</a>
+                    <a href="achievements.html">افتخارات</a>
+                    <a href="challenge.html">چالش‌ها</a>
+                    <a href="chatbot.html">چت‌بات</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-designer">
+                <div class="designer-line">
+                    <span class="line-left"></span>
+                    <span class="designer-icon">✦</span>
+                    <span class="line-right"></span>
+                </div>
+                <div class="designer-info">
+                    <span class="designer-label">طراحی شده توسط</span>
+                    <div class="designer-name">
+                        <span class="name-glow">S</span>
+                        <span class="name-glow">A</span>
+                        <span class="name-glow">D</span>
+                        <span class="name-glow">R</span>
+                        <span class="name-glow">A</span>
+                    </div>
+                    <span class="designer-sub">✦ توسعه‌دهنده حرفه‌ای ✦</span>
+                </div>
+                <div class="designer-copy">
+                    <span class="copy-symbol">©</span>
+                    <span class="copy-year">2026</span>
+                    <span class="copy-dot">•</span>
+                    <span class="copy-text">تمامی حقوق محفوظ است</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>

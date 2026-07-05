@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ورود / ثبت‌نام | NJR</title>
+    
+    <!-- فونت‌ها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- استایل‌ها -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+    
+    <!-- ===== پارتیکل پس‌زمینه (همون صفحه اصلی) ===== -->
+    <div id="particles-js"></div>
+
+    <!-- ===== هدر ===== -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">✦</span>
+                    NJR
+                    <span class="logo-sub">10</span>
+                </a>
+            </div>
+            
+            <nav class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="about.html">تاریخچه</a></li>
+                    <li><a href="achievements.html">افتخارات</a></li>
+                    
+                    <li><a href="challenge.html">چالش‌ها</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn-gold active-login">
+                    <i class="fas fa-user-astronaut"></i>
+                    ورود / ثبت‌نام
+                </a>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== صفحه اصلی ورود ===== -->
+    <section class="login-page">
+        <!-- افکت‌های نوری پس‌زمینه -->
+        <div class="login-glow-1"></div>
+        <div class="login-glow-2"></div>
+        <div class="login-glow-3"></div>
+        
+        <div class="container">
+            <div class="login-wrapper">
+                <!-- سمت چپ: فرم‌ها -->
+                <div class="login-form-container">
+                    <div class="login-header">
+                        <span class="login-badge">✦ NJR</span>
+                        <h1 class="login-title">
+                            <span class="highlight">خوش آمدی</span>
+                        </h1>
+                        <p class="login-sub">به دنیای هواداران نیمار خوش آمدی</p>
+                    </div>
+
+                    <!-- تب‌های ورود / ثبت‌نام -->
+                    <div class="login-tabs">
+                        <button class="tab-btn active" data-tab="login">
+                            <i class="fas fa-sign-in-alt"></i>
+                            ورود
+                        </button>
+                        <button class="tab-btn" data-tab="register">
+                            <i class="fas fa-user-plus"></i>
+                            ثبت‌نام
+                        </button>
+                    </div>
+
+                    <!-- ===== فرم ورود ===== -->
+                    <form class="auth-form active" id="loginForm">
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-user"></i>
+                                نام کاربری
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" id="loginUsername" placeholder="نام کاربری خود را وارد کنید" required />
+                                <span class="input-focus"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-lock"></i>
+                                رمز عبور
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="password" id="loginPassword" placeholder="رمز عبور خود را وارد کنید" required />
+                                <span class="input-focus"></span>
+                                <button type="button" class="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="remember-me">
+                                <input type="checkbox" id="rememberMe" />
+                                <span class="checkmark"></span>
+                                مرا به خاطر بسپار
+                            </label>
+                            <a href="#" class="forgot-password">رمز عبور را فراموش کردی؟</a>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">
+                            <span>ورود</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        
+                        <div class="form-divider">
+                            <span>یا</span>
+                        </div>
+                        
+                        <div class="social-login">
+                            <button type="button" class="social-btn google">
+                                <i class="fab fa-google"></i>
+                            </button>
+                            <button type="button" class="social-btn github">
+                                <i class="fab fa-github"></i>
+                            </button>
+                            <button type="button" class="social-btn discord">
+                                <i class="fab fa-discord"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- ===== فرم ثبت‌نام ===== -->
+                    <form class="auth-form" id="registerForm">
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-user"></i>
+                                نام کاربری
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="text" id="registerUsername" placeholder="نام کاربری خود را انتخاب کنید" required />
+                                <span class="input-focus"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-envelope"></i>
+                                ایمیل
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="email" id="registerEmail" placeholder="ایمیل خود را وارد کنید" required />
+                                <span class="input-focus"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-lock"></i>
+                                رمز عبور
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="password" id="registerPassword" placeholder="رمز عبور خود را انتخاب کنید" required />
+                                <span class="input-focus"></span>
+                                <button type="button" class="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-check-circle"></i>
+                                تکرار رمز عبور
+                            </label>
+                            <div class="input-wrapper">
+                                <input type="password" id="registerConfirmPassword" placeholder="رمز عبور را تکرار کنید" required />
+                                <span class="input-focus"></span>
+                                <button type="button" class="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strengthFill"></div>
+                            </div>
+                            <span class="strength-text" id="strengthText">ضعیف</span>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">
+                            <span>ثبت‌نام</span>
+                            <i class="fas fa-rocket"></i>
+                        </button>
+                        
+                        <p class="form-terms">
+                            با ثبت‌نام، شما <a href="#">قوانین</a> و <a href="#">شرایط</a> را می‌پذیرید.
+                        </p>
+                    </form>
+                </div>
+
+                <!-- سمت راست: تصویر و متن تبلیغاتی -->
+                <div class="login-info">
+                    <div class="info-content">
+                        <div class="info-icon">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <h2>به خانواده <span class="highlight">NJR</span> بپیوند</h2>
+                        <p>دسترسی به محتوای اختصاصی، مسابقات و لحظات ناب فوتبال</p>
+                        
+                        <div class="info-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>محتوای اختصاصی</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>مسابقات هفتگی</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>گالری تصاویر</span>
+                            </div>
+                        </div>
+                        
+                        <div class="info-stats">
+                            <div class="info-stat">
+                                <span class="info-number">12K+</span>
+                                <span class="info-label">عضو فعال</span>
+                            </div>
+                            <div class="info-stat">
+                                <span class="info-number">5K+</span>
+                                <span class="info-label">چالش برگزار شده</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- ===== فوتر فوق‌گنگ با اسم طراح ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>NJR <span>✦</span></h3>
+                <p>همه‌چیز برای اسطوره‌ی فوتبال برزیل</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">خانه</a>
+                <a href="about.html">تاریخچه</a>
+                <a href="achievements.html">افتخارات</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        
+        <!-- ===== بخش طراح ===== -->
+        <div class="footer-designer">
+            <div class="designer-line">
+                <span class="line-left"></span>
+                <span class="designer-icon">✦</span>
+                <span class="line-right"></span>
+            </div>
+            <div class="designer-info">
+                <span class="designer-label">طراحی شده توسط</span>
+                <div class="designer-name">
+                    <span class="name-glow">A</span>
+                    <span class="name-glow">R</span>
+                    <span class="name-glow">D</span>
+                    <span class="name-glow">A</span>
+                    <span class="name-glow">S</span>
+                </div>
+            </div>
+            <div class="designer-copy">
+                <span class="copy-symbol">©</span>
+                <span class="copy-year">2026</span>
+                <span class="copy-dot">•</span>
+                <span class="copy-text">تمامی حقوق محفوظ است</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- ===== اسکریپت‌ها ===== -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NJR</title>
+    
+    <!-- فونت‌ها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- استایل‌ها -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+    
+    <!-- ===== کربن‌لودر ===== -->
+    <div class="loader" id="loader">
+        <div class="loader-ring"></div>
+        <div class="loader-text">NJR</div>
+    </div>
+
+    <!-- ===== پارتیکل پس‌زمینه ===== -->
+    <div id="particles-js"></div>
+
+    <!-- ===== هدر ===== -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">✦</span>
+                    NJR
+                    <span class="logo-sub">10</span>
+                </a>
+            </div>
+            
+            <nav class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="index.html" class="active">خانه</a></li>
+                    <li><a href="about.html">تاریخچه</a></li>
+                    <li><a href="achievements.html">افتخارات</a></li>
+                    <li><a href="challenge.html">چالش‌ها</a></li>
+                </ul>
+            </nav>
+
+           <div class="nav-actions" id="navActions">
+    <div class="user-status" id="userStatus">
+        <a href="login.html" class="btn-gold" id="loginBtn">
+            <i class="fas fa-user-astronaut"></i>
+            ورود / ثبت‌نام
+        </a>
+    </div>
+    <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+    </button>
+</div>
+        </div>
+    </header>
+
+    <!-- ===== بخش هیرو (اصلی) ===== -->
+    <section class="hero" id="home">
+        <!-- لایه‌های بک‌گراند -->
+        <div class="hero-bg-layer"></div>
+        <div class="hero-glow-1"></div>
+        <div class="hero-glow-2"></div>
+        <div class="hero-glow-3"></div>
+        <div class="hero-grid-overlay"></div>
+        
+        <div class="container hero-content">
+            <div class="hero-left">
+                
+                
+                <h1 class="hero-title">
+                    <span class="title-line">نیمار</span>
+                    <span class="title-line gold">جونیور</span>
+                </h1>
+                
+                <div class="hero-typed-wrapper">
+                    <div class="typed-container">
+                        <span id="typed-text"></span>
+                        <span class="cursor-blink">|</span>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="247">0</span>
+                        <span class="stat-label">گل</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="138">0</span>
+                        <span class="stat-label">پاس گل</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="32">0</span>
+                        <span class="stat-label">جام</span>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="#gst" class="btn-primary">
+                        <i class="fas fa-play-circle"></i>
+                       لحظات ناب
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="hero-right">
+                <div class="hero-3d-ring">
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                </div>
+                <div class="hero-number-glow">10</div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- ===== تایم‌لاین مسیر نیمار (بخش جدید و گنگ) ===== -->
+    <section class="timeline-section" id="timeline">
+        <div class="section-header">
+            <span class="section-tag" id="start-st">مسیر قهرمانی</span>
+            <h2 class="section-title">
+                <span class="highlight">سفر نیمار</span>
+                <span class="title-line-glow"></span>
+            </h2>
+            <p class="section-desc">از سانتوس تا افسانه‌ای جهانی</p>
+        </div>
+
+        <div class="container">
+            <div class="timeline">
+                <!-- آیتم ۱ -->
+                <div class="timeline-item" style="--delay:0s">
+                    <div class="timeline-dot">
+                        <span class="dot-year">'09</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>سانتوس</h3>
+                        <p>شروع درخشان در ۱۷ سالگی، قهرمانی کوپا لیبرتادورس ۲۰۱۱</p>
+                        <div class="timeline-stats">
+                            <span>۱۳۸ بازی</span>
+                            <span>۷۱ گل</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- آیتم ۲ -->
+                <div class="timeline-item" style="--delay:0.15s">
+                    <div class="timeline-dot">
+                        <span class="dot-year">'13</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <h3>بارسلونا</h3>
+                        <p>دوران طلایی با MSN، ۲ قهرمانی لالیگا و ۱ چمپیونزلیگ</p>
+                        <div class="timeline-stats">
+                            <span>۱۸۶ بازی</span>
+                            <span>۱۰۵ گل</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- آیتم ۳ -->
+                <div class="timeline-item" style="--delay:0.3s">
+                    <div class="timeline-dot">
+                        <span class="dot-year">'17</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3>پاری سن ژرمن</h3>
+                        <p>گران‌ترین انتقال تاریخ، ۵ قهرمانی لیگ ۱ و فینال چمپیونزلیگ</p>
+                        <div class="timeline-stats">
+                            <span>۱۷۳ بازی</span>
+                            <span>۱۱۸ گل</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- آیتم ۴ -->
+                <div class="timeline-item" style="--delay:0.45s">
+                    <div class="timeline-dot">
+                        <span class="dot-year">'23</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3>الهلال</h3>
+                        <p>فصل جدید، نمایش مهارت‌های بی‌نظیر در خاورمیانه</p>
+                        <div class="timeline-stats">
+                            <span>حالا نوبت توست...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== بخش افتخارات سریع ===== -->
+    <section class="quick-achievements" id="gst">
+        <div class="container">
+            <div class="achievement-grid">
+                <div class="achievement-card" style="--delay:0s">
+                    <div class="ach-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="ach-info">
+                        <h4>لیگ قهرمانان</h4>
+                        <span class="ach-count">1</span>
+                    </div>
+                </div>
+                <div class="achievement-card" style="--delay:0.1s">
+                    <div class="ach-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div class="ach-info">
+                        <h4>لیگ قهرمانی</h4>
+                        <span class="ach-count">7</span>
+                    </div>
+                </div>
+                <div class="achievement-card" style="--delay:0.2s">
+                    <div class="ach-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="ach-info">
+                        <h4>جام حذفی</h4>
+                        <span class="ach-count">5</span>
+                    </div>
+                </div>
+                <div class="achievement-card" style="--delay:0.3s">
+                    <div class="ach-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="ach-info">
+                        <h4>بهترین بازیکن</h4>
+                        <span class="ach-count">12</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== بخش پیش‌نمایش گالری ===== -->
+    <section class="preview-gallery">
+        <div class="container">
+            <div class="gallery-header"  class="highlight">
+                <br>
+                <h2><span class="highlight">لحظات ناب</span></h2>
+                <br>
+            </div>
+            <div class="gallery-grid">
+    <div class="gallery-item" style="--delay:0s">
+        <img src="assets/images/gallery-1.jpg" alt="نیمار در بارسلونا" />
+        <div class="gallery-overlay">
+            <i class="fas fa-image"></i>
+            <span>دوران بارسا</span>
+        </div>
+    </div>
+    <div class="gallery-item" style="--delay:0.1s">
+        <img src="assets/images/gallery-2.jpg" alt="نیمار در تیم ملی برزیل" />
+        <div class="gallery-overlay">
+            <i class="fas fa-image"></i>
+            <span>برزیل</span>
+        </div>
+    </div>
+    <div class="gallery-item" style="--delay:0.2s">
+        <img src="assets/images/gallery-3.jpg" alt="نیمار در پاری سن ژرمن" />
+        <div class="gallery-overlay">
+            <i class="fas fa-image"></i>
+            <span>پاریس</span>
+        </div>
+    </div>
+    <div class="gallery-item" style="--delay:0.3s">
+        <img src="assets/images/gallery-4.jpg" alt="نیمار با افتخارات" />
+        <div class="gallery-overlay">
+            <i class="fas fa-image"></i>
+            <span>افتخارات</span>
+        </div>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- ===== بخش چالش ===== -->
+    <section class="challenge-preview">
+        <div class="container">
+            <div class="challenge-content">
+                <div class="challenge-text">
+                    <span class="challenge-tag">چالش</span>
+                    <h2>چقدر درمورد <span class="highlight">نیمار جونیور</span>میدونی؟ </h2>
+                    <p>توی چالش‌ها شرکت کن و اطلاعاتت رو محک بزن</p>
+                    <a href="challenge.html" class="btn-primary">
+                        شروع کن <i class="fas fa-gamepad"></i>
+                    </a>
+                </div>
+                <div class="challenge-emoji">
+                    <i class="fas fa-futbol"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- ===== فوتر فوق‌گنگ با اسم طراح ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>NJR <span>✦</span></h3>
+                <p>همه‌چیز برای اسطوره‌ی فوتبال برزیل</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">خانه</a>
+                <a href="about.html">تاریخچه</a>
+                <a href="achievements.html">افتخارات</a>
+
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        
+        <!-- ===== بخش طراح ===== -->
+        <div class="footer-designer">
+            <div class="designer-line">
+                <span class="line-left"></span>
+                <span class="designer-icon">✦</span>
+                <span class="line-right"></span>
+            </div>
+            <div class="designer-info">
+                <span class="designer-label">طراحی شده توسط</span>
+                <div class="designer-name">
+                    <span class="name-glow">N</span>
+                    <span class="name-glow">O</span>
+                    <span class="name-glow">O</span>
+                    <span class="name-glow">T</span>
+                    <span class="name-glow">4</span>
+                </div>
+            </div>
+            <div class="designer-copy">
+                <span class="copy-symbol">©</span>
+                <span class="copy-year">2026</span>
+                <span class="copy-dot">•</span>
+                <span class="copy-text">تمامی حقوق محفوظ است</span>
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- ===== مدیریت کاربر ===== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // بررسی وضعیت کاربر
+    const currentUser = localStorage.getItem('currentUser');
+    const loginBtn = document.getElementById('loginBtn');
+    const userStatus = document.getElementById('userStatus');
+    
+    if (currentUser) {
+        // کاربر وارد شده است
+        loginBtn.innerHTML = `
+            <i class="fas fa-user-check"></i>
+            ${currentUser}
+            <span class="user-badge">●</span>
+        `;
+        loginBtn.style.background = 'rgba(212, 175, 55, 0.15)';
+        loginBtn.style.border = '1px solid var(--gold)';
+        loginBtn.style.color = 'var(--gold) !important';
+        loginBtn.href = '#';
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (confirm('آیا می‌خواهی از حساب خود خارج شوی؟')) {
+                localStorage.removeItem('currentUser');
+                localStorage.removeItem('rememberMe');
+                window.location.reload();
+            }
+        });
+    }
+});
+</script>
+
+    <!-- ===== اسکریپت‌ها ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

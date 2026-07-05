@@ -1,0 +1,435 @@
+/* ========================================
+   فایل: chatbot.css
+   استایل‌های صفحه چت‌بات فوق‌گنگ
+   ======================================== */
+
+.chatbot-page {
+    min-height: 100vh;
+    padding: 100px 0 60px;
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+}
+
+/* افکت‌های نوری */
+.chatbot-glow-1 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.06), transparent 70%);
+    border-radius: 50%;
+    top: -200px;
+    right: -200px;
+    animation: floatGlow 8s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+.chatbot-glow-2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.04), transparent 60%);
+    border-radius: 50%;
+    bottom: -100px;
+    left: -100px;
+    animation: floatGlow 10s ease-in-out infinite alternate-reverse;
+    z-index: 0;
+}
+
+.chatbot-glow-3 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.05), transparent 60%);
+    border-radius: 50%;
+    top: 40%;
+    right: 60%;
+    animation: floatGlow 12s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+/* ===== هدر ===== */
+.chatbot-header {
+    text-align: center;
+    padding: 30px 0 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.chatbot-badge {
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.08);
+    color: var(--gold);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.chatbot-title {
+    font-family: var(--font-primary);
+    font-size: 48px;
+    font-weight: 900;
+    margin-top: 12px;
+    letter-spacing: 2px;
+}
+
+.chatbot-title .highlight {
+    color: var(--gold);
+    text-shadow: 0 0 40px var(--gold-glow);
+}
+
+.chatbot-sub {
+    color: var(--text-gray);
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-top: 4px;
+}
+
+/* ===== کانتینر اصلی ===== */
+.chatbot-container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ===== سوالات پیشنهادی ===== */
+.suggested-questions {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.06);
+    padding: 24px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.8s ease both;
+}
+
+.suggest-title {
+    display: block;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.suggest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.suggest-btn {
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.06);
+    border-radius: 12px;
+    color: #ccc;
+    font-family: var(--font-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.suggest-btn:hover {
+    border-color: var(--gold);
+    background: rgba(212, 175, 55, 0.04);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.suggest-btn i {
+    color: var(--gold);
+    font-size: 14px;
+}
+
+/* ===== باکس چت ===== */
+.chat-box {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.06);
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    animation: fadeUp 0.8s ease 0.2s both;
+}
+
+.chat-messages {
+    height: 450px;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 2px;
+}
+
+/* ===== پیام‌ها ===== */
+.message {
+    display: flex;
+    gap: 12px;
+    max-width: 85%;
+    animation: messageSlide 0.5s ease both;
+}
+
+.message.user-message {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.06);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+    color: var(--gold);
+}
+
+.user-message .message-avatar {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.message-text {
+    padding: 12px 18px;
+    border-radius: 16px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.04);
+}
+
+.user-message .message-text {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(212, 175, 55, 0.02));
+    border-color: rgba(212, 175, 55, 0.08);
+}
+
+.message-time {
+    font-size: 11px;
+    color: #555;
+    padding: 0 4px;
+}
+
+.user-message .message-time {
+    text-align: left;
+}
+
+/* ===== تایپ ایندیکیتور ===== */
+.typing-indicator {
+    display: none;
+    padding: 12px 24px 20px;
+    gap: 6px;
+}
+
+.typing-indicator.active {
+    display: flex;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: typingBounce 1.4s ease-in-out infinite;
+}
+
+.typing-indicator span:nth-child(1) { animation-delay: 0s; }
+.typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+    0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+    30% {
+        transform: translateY(-12px);
+        opacity: 1;
+    }
+}
+
+/* ===== ورودی ===== */
+.chat-input-wrapper {
+    padding: 16px 24px 24px;
+    border-top: 1px solid rgba(212, 175, 55, 0.04);
+}
+
+.chat-input-box {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.chat-input-box input {
+    flex: 1;
+    padding: 14px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.06);
+    border-radius: 14px;
+    color: #fff;
+    font-family: var(--font-secondary);
+    font-size: 15px;
+    outline: none;
+    transition: all 0.4s ease;
+}
+
+.chat-input-box input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 30px var(--gold-glow);
+}
+
+.chat-input-box input::placeholder {
+    color: #555;
+}
+
+.send-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border: none;
+    color: var(--black);
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 20px var(--gold-glow);
+    flex-shrink: 0;
+}
+
+.send-btn:hover {
+    transform: scale(1.05) rotate(-10deg);
+    box-shadow: 0 0 40px var(--gold-glow-strong);
+}
+
+.chat-char-counter {
+    text-align: left;
+    font-size: 12px;
+    color: #555;
+    margin-top: 6px;
+}
+
+#charCount {
+    color: var(--text-gray);
+}
+
+/* ===== آمار ===== */
+.chat-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+    animation: fadeUp 0.8s ease 0.4s both;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
+    border: 1px solid rgba(212, 175, 55, 0.04);
+    transition: all 0.4s ease;
+}
+
+.stat-item:hover {
+    border-color: rgba(212, 175, 55, 0.1);
+    transform: translateY(-4px);
+}
+
+.stat-number {
+    font-family: var(--font-primary);
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--gold);
+    display: block;
+    text-shadow: 0 0 20px var(--gold-glow);
+}
+
+.stat-label {
+    font-size: 13px;
+    color: var(--text-gray);
+}
+
+/* ===== انیمیشن پیام ===== */
+@keyframes messageSlide {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===== انیمیشن تایپ کاراکتر ===== */
+@keyframes cursorBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: var(--gold);
+    animation: cursorBlink 0.8s step-end infinite;
+    margin-right: 2px;
+}
+
+/* ===== ریسپانسیو ===== */
+@media (max-width: 1024px) {
+    .chatbot-title { font-size: 36px; }
+    .suggest-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .chatbot-title { font-size: 28px; }
+    .chat-messages { height: 350px; padding: 16px; }
+    .message { max-width: 95%; }
+    .suggest-grid { grid-template-columns: 1fr; }
+    .chat-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .stat-number { font-size: 24px; }
+    .stat-item { padding: 12px; }
+    .chat-input-wrapper { padding: 12px 16px 16px; }
+    .send-btn { width: 44px; height: 44px; font-size: 17px; }
+    .suggested-questions { padding: 16px; }
+}
+
+@media (max-width: 480px) {
+    .chatbot-title { font-size: 22px; }
+    .chat-messages { height: 280px; padding: 12px; }
+    .message-text { font-size: 13px; padding: 10px 14px; }
+    .message-avatar { width: 32px; height: 32px; font-size: 14px; }
+    .chat-stats { grid-template-columns: 1fr 1fr; }
+    .chat-stats .stat-item:last-child { grid-column: span 2; }
+}

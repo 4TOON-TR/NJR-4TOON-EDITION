@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>چالش‌های نیمار | NJR</title>
+    
+    <!-- فونت‌ها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- استایل‌ها -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/challenge.css" />
+</head>
+<body>
+    
+    <!-- ===== پارتیکل پس‌زمینه ===== -->
+    <div id="particles-js"></div>
+
+    <!-- ===== هدر ===== -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">✦</span>
+                    NJR
+                    <span class="logo-sub">10</span>
+                </a>
+            </div>
+            
+            <nav class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="about.html">تاریخچه</a></li>
+                    <li><a href="achievements.html">افتخارات</a></li>
+                    <li><a href="challenge.html" class="active">چالش‌ها</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions" id="navActions">
+                <div class="user-status" id="userStatus">
+                    <a href="login.html" class="btn-gold" id="loginBtn">
+                        <i class="fas fa-user-astronaut"></i>
+                        ورود / ثبت‌نام
+                    </a>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== صفحه اصلی چالش ===== -->
+    <section class="challenge-page">
+        <!-- افکت‌های نوری -->
+        <div class="challenge-glow-1"></div>
+        <div class="challenge-glow-2"></div>
+        <div class="challenge-glow-3"></div>
+        
+        <div class="container">
+            <!-- هدر صفحه -->
+            <div class="challenge-header">
+                <span class="challenge-badge">✦ چالش</span>
+                <h1 class="challenge-title">
+                    <span class="highlight">مهارت های نیمار جونیور</span>
+                </h1>
+                <p class="challenge-sub">دانش فوتبالی‌ت رو محک بزن</p>
+            </div>
+
+            <!-- ===== مرحله ۱: انتخاب سطح ===== -->
+            <div class="level-selection" id="levelSelection">
+                <h2 class="level-title">سطح چالش رو انتخاب کن</h2>
+                <div class="level-grid">
+                    <div class="level-card" data-level="easy" style="--delay:0s">
+                        <div class="level-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>راحت</h3>
+                        <p>سوالات پایه‌ای درباره نیمار</p>
+                        <span class="level-badge">۲۰ سوال</span>
+                    </div>
+                    <div class="level-card" data-level="medium" style="--delay:0.1s">
+                        <div class="level-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>متوسط</h3>
+                        <p>سوالات تخصصی‌تر از دوران حرفه‌ای</p>
+                        <span class="level-badge">۲۰ سوال</span>
+                    </div>
+                    <div class="level-card" data-level="hard" style="--delay:0.2s">
+                        <div class="level-icon">
+                            <i class="fas fa-skull"></i>
+                        </div>
+                        <h3>سخت</h3>
+                        <p>سوالات حرفه‌ای برای هواداران واقعی</p>
+                        <span class="level-badge">۲۰ سوال</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== مرحله ۲: نمایش سوالات ===== -->
+            <div class="quiz-container" id="quizContainer" style="display: none;">
+                <div class="quiz-header">
+                    <div class="quiz-progress">
+                        <div class="progress-bar" id="progressBar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <span class="progress-text" id="progressText">۱ از ۲۰</span>
+                    </div>
+                    <div class="quiz-score">
+                        <i class="fas fa-star"></i>
+                        <span id="scoreDisplay">۰</span>
+                    </div>
+                    <button class="quiz-exit" id="quizExit">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="question-container" id="questionContainer">
+                    <div class="question-number" id="questionNumber">سوال ۱</div>
+                    <h2 class="question-text" id="questionText">سوال اینجا نمایش داده میشه</h2>
+                    <div class="options-grid" id="optionsGrid">
+                        <!-- گزینه‌ها با جاوااسکریپت پر می‌شوند -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== مرحله ۳: نتیجه نهایی ===== -->
+            <div class="result-container" id="resultContainer" style="display: none;">
+                <div class="result-card">
+                    <div class="result-icon" id="resultIcon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h2 class="result-title" id="resultTitle">نتیجه چالش</h2>
+                    <div class="result-stats">
+                        <div class="result-stat">
+                            <span class="result-number" id="correctCount">۰</span>
+                            <span class="result-label">پاسخ درست</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-number" id="wrongCount">۰</span>
+                            <span class="result-label">پاسخ اشتباه</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="result-number" id="percentageDisplay">۰%</span>
+                            <span class="result-label">درصد موفقیت</span>
+                        </div>
+                    </div>
+                    <div class="result-message" id="resultMessage">
+                        پیام نتیجه اینجا نمایش داده میشه
+                    </div>
+                    <div class="result-actions">
+                        <button class="btn-retry" id="retryBtn">
+                            <i class="fas fa-redo"></i>
+                            دوباره امتحان کن
+                        </button>
+                        <button class="btn-levels" id="levelsBtn">
+                            <i class="fas fa-arrow-left"></i>
+                            انتخاب سطح
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== فوتر ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>NJR <span>✦</span></h3>
+                    <p>همه‌چیز برای اسطوره‌ی فوتبال برزیل</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">خانه</a>
+                    <a href="about.html">تاریخچه</a>
+                    <a href="achievements.html">افتخارات</a>
+                    <a href="challenge.html">چالش‌ها</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-designer">
+                <div class="designer-line">
+                    <span class="line-left"></span>
+                    <span class="designer-icon">✦</span>
+                    <span class="line-right"></span>
+                </div>
+                <div class="designer-info">
+                    <span class="designer-label">طراحی شده توسط</span>
+                    <div class="designer-name">
+                        <span class="name-glow">A</span>
+                        <span class="name-glow">R</span>
+                        <span class="name-glow">D</span>
+                        <span class="name-glow">A</span>
+                        <span class="name-glow">S</span>
+                    </div>
+                    <span class="designer-sub">✦ توسعه‌دهنده حرفه‌ای ✦</span>
+                </div>
+                <div class="designer-copy">
+                    <span class="copy-symbol">©</span>
+                    <span class="copy-year">2026</span>
+                    <span class="copy-dot">•</span>
+                    <span class="copy-text">تمامی حقوق محفوظ است</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== اسکریپت‌ها ===== -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/challenge.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تاریخچه نیمار | NJR</title>
+    
+    <!-- فونت‌ها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- استایل‌ها -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/about.css" />
+</head>
+<body>
+    
+    <!-- ===== پارتیکل پس‌زمینه ===== -->
+    <div id="particles-js"></div>
+
+    <!-- ===== هدر ===== -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">✦</span>
+                    NJR
+                    <span class="logo-sub">10</span>
+                </a>
+            </div>
+            
+            <nav class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="about.html" class="active">تاریخچه</a></li>
+                    <li><a href="achievements.html">افتخارات</a></li>
+                    <li><a href="challenge.html">چالش‌ها</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions" id="navActions">
+                <div class="user-status" id="userStatus">
+                    <a href="login.html" class="btn-gold" id="loginBtn">
+                        <i class="fas fa-user-astronaut"></i>
+                        ورود / ثبت‌نام
+                    </a>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== صفحه اصلی تاریخچه ===== -->
+    <section class="about-page">
+        <!-- افکت‌های نوری -->
+        <div class="about-glow-1"></div>
+        <div class="about-glow-2"></div>
+        <div class="about-glow-3"></div>
+        
+        <div class="container">
+            <!-- هدر صفحه -->
+            <div class="about-header">
+                <span class="about-badge">✦ مسیر اسطوره</span>
+                <h1 class="about-title">
+                    <span class="highlight">تاریخچه نیمار جونیور</span>
+                </h1>
+                <p class="about-sub">از سانتوس تا افسانه‌ای جهانی</p>
+                <div class="about-stats-mini">
+                    <div class="mini-stat">
+                        <span class="mini-number">496+</span>
+                        <span class="mini-label">بازی رسمی</span>
+                    </div>
+                    <div class="mini-stat">
+                        <span class="mini-number">293+</span>
+                        <span class="mini-label">گل زده</span>
+                    </div>
+                    <div class="mini-stat">
+                        <span class="mini-number">85+</span>
+                        <span class="mini-label">پاس گل</span>
+                    </div>
+                    <div class="mini-stat">
+                        <span class="mini-number">32</span>
+                        <span class="mini-label">جام قهرمانی</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== لیست باشگاه‌ها ===== -->
+            <div class="clubs-section">
+                <h2 class="section-title-dark">
+                    <span class="highlight">باشگاه‌های</span> نیمار
+                </h2>
+                <p class="section-desc-dark">روی هر باشگاه کلیک کن تا تمام بازی‌ها رو ببینی</p>
+                
+                <div class="clubs-grid">
+                    <!-- باشگاه ۱: سانتوس -->
+                    <div class="club-card" data-club="santos" style="--delay:0s">
+                        <div class="club-icon">
+                            <i class="fas fa-anchor"></i>
+                        </div>
+                        <div class="club-info">
+                            <h3>سانتوس</h3>
+                            <span class="club-years">۲۰۰۹ - ۲۰۱۳</span>
+                            <div class="club-stats">
+                                <span>۲۲۵ بازی</span>
+                                <span>۱۳۷ گل</span>
+                                <span>۶۵ پاس گل</span>
+                            </div>
+                        </div>
+                        <div class="club-arrow">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                    </div>
+
+                    <!-- باشگاه ۲: بارسلونا -->
+                    <div class="club-card" data-club="barcelona" style="--delay:0.1s">
+                        <div class="club-icon">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <div class="club-info">
+                            <h3>بارسلونا</h3>
+                            <span class="club-years">۲۰۱۳ - ۲۰۱۷</span>
+                            <div class="club-stats">
+                                <span>۱۸۶ بازی</span>
+                                <span>۱۰۵ گل</span>
+                                <span>۷۶ پاس گل</span>
+                            </div>
+                        </div>
+                        <div class="club-arrow">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                    </div>
+
+                    <!-- باشگاه ۳: پاری سن ژرمن -->
+                    <div class="club-card" data-club="psg" style="--delay:0.2s">
+                        <div class="club-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="club-info">
+                            <h3>پاری سن ژرمن</h3>
+                            <span class="club-years">۲۰۱۷ - ۲۰۲۳</span>
+                            <div class="club-stats">
+                                <span>۱۷۳ بازی</span>
+                                <span>۱۱۸ گل</span>
+                                <span>۷۷ پاس گل</span>
+                            </div>
+                        </div>
+                        <div class="club-arrow">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                    </div>
+
+                    <!-- باشگاه ۴: الهلال -->
+                    <div class="club-card" data-club="alhilal" style="--delay:0.3s">
+                        <div class="club-icon">
+                            <i class="fas fa-star-and-crescent"></i>
+                        </div>
+                        <div class="club-info">
+                            <h3>الهلال</h3>
+                            <span class="club-years">۲۰۲۳ - ۲۰۲۵</span>
+                            <div class="club-stats">
+                                <span>۷ بازی</span>
+                                <span>۱ گل</span>
+                                <span>۳ پاس گل</span>
+                            </div>
+                        </div>
+                        <div class="club-arrow">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                    </div>
+
+                    <!-- باشگاه ۵: سانتوس (بازگشت) -->
+                    <div class="club-card" data-club="santos2025" style="--delay:0.4s">
+                        <div class="club-icon">
+                            <i class="fas fa-undo-alt"></i>
+                        </div>
+                        <div class="club-info">
+                            <h3>سانتوس (بازگشت)</h3>
+                            <span class="club-years">۲۰۲۵ - حالا</span>
+                            <div class="club-stats">
+                                <span>۳۷ بازی</span>
+                                <span>۱۵ گل</span>
+                                <span>۸ پاس گل</span>
+                            </div>
+                        </div>
+                        <div class="club-arrow">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                    </div>
+
+                    <!-- باشگاه ۶: تیم ملی برزیل -->
+                    <div class="club-card" data-club="brazil" style="--delay:0.5s">
+                        <div class="club-icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div class="club-info">
+                            <h3>تیم ملی برزیل</h3>
+                            <span class="club-years">۲۰۱۰ - حالا</span>
+                            <div class="club-stats">
+                                <span>۱۲۸ بازی</span>
+                                <span>۷۹ گل</span>
+                                <span>۵۹ پاس گل</span>
+                            </div>
+                        </div>
+                        <div class="club-arrow">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== بخش نمایش بازی‌ها (پنهان در ابتدا) ===== -->
+            <div class="matches-section" id="matchesSection">
+                <div class="matches-header">
+                    <h2 class="section-title-dark">
+                        <span class="highlight">بازی‌های</span> <span id="clubNameDisplay">...</span>
+                    </h2>
+                    <button class="close-matches" id="closeMatches">
+                        <i class="fas fa-times"></i>
+                        بستن
+                    </button>
+                </div>
+                
+                <div class="matches-grid" id="matchesGrid">
+                    <!-- بازی‌ها با جاوااسکریپت پر می‌شوند -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== فوتر ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>NJR <span>✦</span></h3>
+                    <p>همه‌چیز برای اسطوره‌ی فوتبال برزیل</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">خانه</a>
+                    <a href="about.html">تاریخچه</a>
+                    <a href="achievements.html">افتخارات</a>
+                    <a href="challenge.html">چالش‌ها</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <!-- ===== بخش طراح ===== -->
+            <div class="footer-designer">
+                <div class="designer-line">
+                    <span class="line-left"></span>
+                    <span class="designer-icon">✦</span>
+                    <span class="line-right"></span>
+                </div>
+                <div class="designer-info">
+                    <span class="designer-label">طراحی شده توسط</span>
+                    <div class="designer-name">
+                        <span class="name-glow">A</span>
+                        <span class="name-glow">R</span>
+                        <span class="name-glow">D</span>
+                        <span class="name-glow">A</span>
+                        <span class="name-glow">S</span>
+                    </div>
+                    <span class="designer-sub">✦ توسعه‌دهنده حرفه‌ای ✦</span>
+                </div>
+                <div class="designer-copy">
+                    <span class="copy-symbol">©</span>
+                    <span class="copy-year">2026</span>
+                    <span class="copy-dot">•</span>
+                    <span class="copy-text">تمامی حقوق محفوظ است</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== اسکریپت‌ها ===== -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/about.js"></script>
+</body>
+</html>

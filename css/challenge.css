@@ -1,0 +1,594 @@
+/* ========================================
+   فایل: challenge.css
+   استایل‌های صفحه چالش فوق‌گنگ
+   ======================================== */
+
+/* ===== صفحه اصلی ===== */
+.challenge-page {
+    min-height: 100vh;
+    padding: 100px 0 60px;
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+}
+
+/* افکت‌های نوری */
+.challenge-glow-1 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.04), transparent 70%);
+    border-radius: 50%;
+    top: -200px;
+    right: -200px;
+    animation: floatGlow 8s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+.challenge-glow-2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.03), transparent 60%);
+    border-radius: 50%;
+    bottom: -100px;
+    left: -100px;
+    animation: floatGlow 10s ease-in-out infinite alternate-reverse;
+    z-index: 0;
+}
+
+.challenge-glow-3 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.04), transparent 60%);
+    border-radius: 50%;
+    top: 40%;
+    right: 60%;
+    animation: floatGlow 12s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+/* ===== هدر صفحه ===== */
+.challenge-header {
+    text-align: center;
+    padding: 40px 0 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.challenge-badge {
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.08);
+    color: var(--gold);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.challenge-title {
+    font-family: var(--font-primary);
+    font-size: 48px;
+    font-weight: 900;
+    margin-top: 12px;
+    letter-spacing: 2px;
+}
+
+.challenge-title .highlight {
+    color: var(--gold);
+    text-shadow: 0 0 40px var(--gold-glow);
+}
+
+.challenge-sub {
+    color: var(--text-gray);
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-top: 4px;
+}
+
+/* ===== انتخاب سطح ===== */
+.level-selection {
+    position: relative;
+    z-index: 1;
+    padding: 20px 0;
+}
+
+.level-title {
+    font-family: var(--font-primary);
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 32px;
+}
+
+.level-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.level-card {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.06);
+    padding: 40px 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: var(--delay, 0s);
+    position: relative;
+    overflow: hidden;
+}
+
+.level-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.level-card:hover::before {
+    opacity: 1;
+}
+
+.level-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--gold);
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.1);
+}
+
+.level-icon {
+    font-size: 48px;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: block;
+}
+
+.level-card h3 {
+    font-family: var(--font-primary);
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.level-card p {
+    color: var(--text-gray);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.level-badge {
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.06);
+    color: var(--gold);
+    padding: 4px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+/* ===== کوئیز ===== */
+.quiz-container {
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 0.6s ease both;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
+    border: 1px solid rgba(212, 175, 55, 0.06);
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.quiz-progress {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 3px;
+    transition: width 0.6s ease;
+    width: 0%;
+}
+
+.progress-text {
+    font-size: 13px;
+    color: var(--text-gray);
+    font-weight: 600;
+}
+
+.quiz-score {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-primary);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.quiz-score i {
+    font-size: 18px;
+}
+
+.quiz-exit {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.06);
+    color: var(--text-gray);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 18px;
+}
+
+.quiz-exit:hover {
+    border-color: #ff4444;
+    color: #ff4444;
+}
+
+/* ===== سوالات ===== */
+.question-container {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.06);
+    padding: 40px;
+    animation: slideIn 0.5s ease both;
+}
+
+.question-number {
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.question-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 32px;
+    line-height: 1.4;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.option-btn {
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(212, 175, 55, 0.06);
+    border-radius: 12px;
+    color: #ccc;
+    font-family: var(--font-secondary);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+}
+
+.option-btn:hover:not(.disabled) {
+    border-color: rgba(212, 175, 55, 0.2);
+    background: rgba(212, 175, 55, 0.04);
+    transform: translateX(-4px);
+}
+
+.option-btn .option-letter {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.06);
+    color: var(--gold);
+    text-align: center;
+    line-height: 28px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-left: 12px;
+}
+
+.option-btn.correct {
+    border-color: #44ff88 !important;
+    background: rgba(68, 255, 136, 0.1) !important;
+    color: #44ff88 !important;
+    animation: correctPulse 0.6s ease;
+}
+
+.option-btn.correct .option-letter {
+    background: #44ff88;
+    color: var(--black);
+}
+
+.option-btn.wrong {
+    border-color: #ff4444 !important;
+    background: rgba(255, 68, 68, 0.1) !important;
+    color: #ff4444 !important;
+    animation: wrongShake 0.6s ease;
+}
+
+.option-btn.wrong .option-letter {
+    background: #ff4444;
+    color: #fff;
+}
+
+.option-btn.show-correct {
+    border-color: var(--gold) !important;
+    background: rgba(212, 175, 55, 0.1) !important;
+    color: var(--gold) !important;
+}
+
+.option-btn.show-correct .option-letter {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.option-btn.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* ===== انیمیشن‌های پاسخ ===== */
+@keyframes correctPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(68, 255, 136, 0.3); }
+    100% { transform: scale(1); }
+}
+
+@keyframes wrongShake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-10px); }
+    40% { transform: translateX(10px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+}
+
+/* ===== نتیجه نهایی ===== */
+.result-container {
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 0.8s ease both;
+}
+
+.result-card {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 24px;
+    border: 1px solid rgba(212, 175, 55, 0.06);
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.result-icon {
+    font-size: 80px;
+    color: var(--gold);
+    margin-bottom: 16px;
+    animation: floatEmoji 3s ease-in-out infinite;
+}
+
+.result-title {
+    font-family: var(--font-primary);
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 24px;
+}
+
+.result-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.result-stat {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.06);
+}
+
+.result-number {
+    font-family: var(--font-primary);
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--gold);
+    display: block;
+    text-shadow: 0 0 20px var(--gold-glow);
+}
+
+.result-label {
+    font-size: 12px;
+    color: var(--text-gray);
+    margin-top: 4px;
+    display: block;
+}
+
+.result-message {
+    font-size: 16px;
+    color: #aaa;
+    padding: 16px 24px;
+    background: rgba(212, 175, 55, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.06);
+    margin-bottom: 24px;
+}
+
+.result-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-retry {
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--black);
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 30px var(--gold-glow);
+}
+
+.btn-retry:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 50px var(--gold-glow-strong);
+}
+
+.btn-levels {
+    padding: 14px 32px;
+    background: rgba(255, 255, 255, 0.03);
+    color: #fff;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 50px;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-levels:hover {
+    border-color: var(--gold);
+    background: rgba(212, 175, 55, 0.04);
+}
+
+/* ===== ریسپانسیو ===== */
+@media (max-width: 1024px) {
+    .challenge-title {
+        font-size: 36px;
+    }
+    
+    .level-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .challenge-title {
+        font-size: 28px;
+    }
+    
+    .level-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .question-text {
+        font-size: 20px;
+    }
+    
+    .question-container {
+        padding: 24px;
+    }
+    
+    .result-card {
+        padding: 30px 20px;
+    }
+    
+    .result-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .quiz-header {
+        padding: 12px 16px;
+    }
+    
+    .result-actions {
+        flex-direction: column;
+    }
+    
+    .btn-retry, .btn-levels {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .challenge-title {
+        font-size: 22px;
+    }
+    
+    .level-title {
+        font-size: 22px;
+    }
+    
+    .level-card {
+        padding: 24px 16px;
+    }
+    
+    .level-icon {
+        font-size: 36px;
+    }
+    
+    .question-text {
+        font-size: 17px;
+    }
+    
+    .option-btn {
+        font-size: 13px;
+        padding: 12px 16px;
+    }
+    
+    .result-icon {
+        font-size: 60px;
+    }
+    
+    .result-title {
+        font-size: 24px;
+    }
+}

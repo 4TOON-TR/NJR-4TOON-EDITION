@@ -1,0 +1,548 @@
+/* ========================================
+   فایل: about.css
+   استایل‌های صفحه تاریخچه فوق‌گنگ
+   ======================================== */
+
+/* ===== صفحه اصلی ===== */
+.about-page {
+    min-height: 100vh;
+    padding: 100px 0 60px;
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+}
+
+/* افکت‌های نوری */
+.about-glow-1 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.04), transparent 70%);
+    border-radius: 50%;
+    top: -200px;
+    right: -200px;
+    animation: floatGlow 8s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+.about-glow-2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.03), transparent 60%);
+    border-radius: 50%;
+    bottom: -100px;
+    left: -100px;
+    animation: floatGlow 10s ease-in-out infinite alternate-reverse;
+    z-index: 0;
+}
+
+.about-glow-3 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.04), transparent 60%);
+    border-radius: 50%;
+    top: 40%;
+    right: 60%;
+    animation: floatGlow 12s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+/* ===== هدر صفحه ===== */
+.about-header {
+    text-align: center;
+    padding: 40px 0 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.about-badge {
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.08);
+    color: var(--gold);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.about-title {
+    font-family: var(--font-primary);
+    font-size: 48px;
+    font-weight: 900;
+    margin-top: 12px;
+    letter-spacing: 2px;
+}
+
+.about-title .highlight {
+    color: var(--gold);
+    text-shadow: 0 0 40px var(--gold-glow);
+}
+
+.about-sub {
+    color: var(--text-gray);
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-top: 4px;
+}
+
+.about-stats-mini {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 24px;
+}
+
+.mini-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mini-number {
+    font-family: var(--font-primary);
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--gold);
+    text-shadow: 0 0 20px var(--gold-glow);
+}
+
+.mini-label {
+    font-size: 12px;
+    color: var(--text-gray);
+    letter-spacing: 1px;
+}
+
+/* ===== بخش باشگاه‌ها ===== */
+.clubs-section {
+    position: relative;
+    z-index: 1;
+    padding: 40px 0;
+}
+
+.section-title-dark {
+    font-family: var(--font-primary);
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.section-title-dark .highlight {
+    color: var(--gold);
+    text-shadow: 0 0 30px var(--gold-glow);
+}
+
+.section-desc-dark {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 32px;
+}
+
+/* ===== کارت‌های باشگاه ===== */
+.clubs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.club-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
+    border: 1px solid rgba(212, 175, 55, 0.06);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+.club-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: var(--gold);
+    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.12);
+    background: rgba(212, 175, 55, 0.04);
+}
+
+.club-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.club-info {
+    flex: 1;
+}
+
+.club-info h3 {
+    font-family: var(--font-primary);
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.club-years {
+    font-size: 12px;
+    color: var(--text-gray);
+    letter-spacing: 1px;
+}
+
+.club-stats {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--gold);
+}
+
+.club-stats span {
+    background: rgba(212, 175, 55, 0.06);
+    padding: 2px 10px;
+    border-radius: 50px;
+    border: 1px solid rgba(212, 175, 55, 0.06);
+}
+
+.club-arrow {
+    color: var(--text-gray);
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.club-card:hover .club-arrow {
+    color: var(--gold);
+    transform: translateX(-4px);
+}
+
+/* ===== بخش بازی‌ها ===== */
+.matches-section {
+    display: none;
+    margin-top: 40px;
+    padding: 40px 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.06);
+    position: relative;
+    z-index: 1;
+}
+
+.matches-section.active {
+    display: block;
+    animation: fadeUp 0.6s ease both;
+}
+
+.matches-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.close-matches {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.06);
+    color: var(--text-gray);
+    padding: 8px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.close-matches:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    box-shadow: 0 0 20px var(--gold-glow);
+}
+
+/* ===== کارت‌های بازی ===== */
+.matches-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.match-card {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
+    border: 1px solid rgba(212, 175, 55, 0.06);
+    padding: 28px 32px;
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+.match-card:hover {
+    border-color: rgba(212, 175, 55, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.match-competition {
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.match-date {
+    font-size: 12px;
+    color: var(--text-gray);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.match-opponent {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.04);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.04);
+}
+
+.match-vs {
+    font-size: 11px;
+    color: #444;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.match-team {
+    font-family: var(--font-primary);
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.match-result {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    font-weight: 700;
+    padding: 4px 16px;
+    border-radius: 8px;
+    margin-right: auto;
+}
+
+.match-result.win {
+    color: #44ff88;
+    background: rgba(68, 255, 136, 0.06);
+    border: 1px solid rgba(68, 255, 136, 0.1);
+}
+
+.match-result.draw {
+    color: #ffaa00;
+    background: rgba(255, 170, 0, 0.06);
+    border: 1px solid rgba(255, 170, 0, 0.1);
+}
+
+.match-result.loss {
+    color: #ff4444;
+    background: rgba(255, 68, 68, 0.06);
+    border: 1px solid rgba(255, 68, 68, 0.1);
+}
+
+.match-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 12px 0;
+}
+
+.match-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #ccc;
+}
+
+.match-stat i {
+    color: var(--gold);
+    font-size: 14px;
+    width: 20px;
+}
+
+.match-details {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    padding: 12px 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.04);
+    margin: 8px 0;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.detail-label {
+    font-size: 10px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.detail-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.match-analysis {
+    display: flex;
+    gap: 12px;
+    padding: 12px 16px;
+    background: rgba(212, 175, 55, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.04);
+    margin-top: 8px;
+}
+
+.match-analysis i {
+    color: var(--gold);
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+.match-analysis p {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* ===== ریسپانسیو ===== */
+@media (max-width: 1024px) {
+    .clubs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .match-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .match-details {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 32px;
+    }
+    
+    .about-stats-mini {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .mini-number {
+        font-size: 22px;
+    }
+    
+    .clubs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .match-header {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    
+    .match-opponent {
+        flex-wrap: wrap;
+    }
+    
+    .match-team {
+        font-size: 18px;
+    }
+    
+    .match-result {
+        font-size: 16px;
+        padding: 2px 12px;
+    }
+    
+    .match-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+    
+    .match-details {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+    }
+    
+    .match-card {
+        padding: 16px 18px;
+    }
+    
+    .matches-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-title {
+        font-size: 26px;
+    }
+    
+    .about-stats-mini {
+        gap: 12px;
+    }
+    
+    .mini-number {
+        font-size: 18px;
+    }
+    
+    .mini-label {
+        font-size: 10px;
+    }
+    
+    .club-stats {
+        flex-wrap: wrap;
+    }
+    
+    .match-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .match-analysis p {
+        font-size: 12px;
+    }
+}
